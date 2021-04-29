@@ -105,3 +105,5 @@ def equalSum(complete, index=0,  left=[], right=[]):
 
     equalSum(complete, index+1, left+[current], right)
     equalSum(complete, index+1, left, right+[current])
+
+''' Question 1, 6, 7, 8, 10, 14 will be updated soon'''
