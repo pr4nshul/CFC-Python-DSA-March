@@ -10,7 +10,6 @@ def deci_to_oct(deci):
     return res
 deci_to_oct(453)
 
-
 #Question 2
 def calculator(a,b,ch):
     if ch=="*":
