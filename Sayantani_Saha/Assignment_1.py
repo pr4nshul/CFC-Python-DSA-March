@@ -36,7 +36,17 @@ else:
         num_2=num_1
         num_1=res
     print(num_1)
+    
+#Question 4
+n = 100
+nums = [i for i in range(2, n+1, 2)]
+i = 0
+count = 0
 
+while i < len(nums):
+    print(nums[i], end=" ")
+    count += 1
+    i = i + 2*count
 
 #Question 5
 num=int(input("Enter the number: "))  #Question 5
@@ -178,5 +188,4 @@ for i in range(1,2*n):
                 print(" ",end=" ")
     print()
 
-# I had issues with 4, 7 c, 7 d, 7 i
-# Will update as soon as I find a solution 
+#7 c, 7 d, 7 i --- Will be update as soon as I find a solution 
