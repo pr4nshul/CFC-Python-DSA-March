@@ -50,6 +50,15 @@ while n>0:
     n=n//10
 print(res)
 
+#Question 5
+n = int(input())
+s = str(n)
+li = [0]*len(s)
+for i in range(len(s)):
+    index = int(s[i])
+    li[index-1] = str(i+1)
+print("".join(li))
+
 
 #Question 6
 def GCD(a,b):
@@ -91,6 +100,20 @@ for i in range(len(numbers)):
         count+=1
 print(count)
 
+#Question 9:
+nums = [2, 1, 6, 7, 12, 17]
+count = 0
+for i in nums:
+    if i == 0 or i == 1:
+        count += 1
+    else:
+        j = 2
+        while j < i:
+            if i % j == 0:
+                count += 1
+                break
+            j += 1
+print(len(nums) - count)
 
 #Question 10
 def isSorted(numbers):
@@ -128,30 +151,17 @@ print(numbers)
 
 
 #Question 12
-def swap(arr,a,b):
-    arr[a],arr[b]=arr[b],arr[a]
-    
-def reverse(arr,start,end):
-    while start<end and start!=end:
-        arr[start],arr[end-1]=arr[end-1],arr[start]
-        start+=1
-        end-=1
-    return arr
-    
-numbers=list(map(int,input().split(",")))
-numbers.sort()
-for i in range(len(numbers)):
-    start=0
-    end=len(numbers)-1
-    while start!=end and start<end:
-        if numbers[start]%2!=0 and numbers[end]%2==0:
-            swap(numbers,start,end)
-            start+=1
-            end-=1
-        elif numbers[start]%2!=0 and numbers[end]%2!=0:
-            end-=1
-        else:
-            start+=1
+nums = [3,8,5,13,6,12,18,5]
+even = []
+odd = []
+
+for i in nums:
+    if i%2 == 0:
+        even.append(i)
+    else:
+        odd.append(i)
+
+print(sorted(even) + sorted(odd))
 
 
 #Question 13
@@ -208,4 +218,20 @@ for i in range(len(numbers)):
 print(li)
 
 
-''' Question  5, 9, 12, 17 aren't present will be pushed once I find the solution '''
+#Question 17
+nums = [7,2,6]
+def permutation(nums):
+    if len(nums) == 0:
+        print("No permutation")
+        return
+    base = [nums[0]]
+    for i in range(1,len(nums)):
+        permute = []
+        for j in range(len(base)):
+            curr = [base[j]]
+            for k in range(0,len(curr) + 1):
+                element = curr[:k] + [nums[i]] + curr[k:]
+                permute.append(element)
+        base = permute
+    return base
+print(permutation(nums))
